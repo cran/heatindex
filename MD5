@@ -1,0 +1,13 @@
+02e853ca91877c462365811288aa22be *DESCRIPTION
+022b16e98ae407936e0fc60a47201ea9 *LICENSE
+8be8eb90c7aa866c1ea063143b02cff8 *NAMESPACE
+9c09ffd8e2c06daa9ac4ad0783526267 *R/RcppExports.R
+dd9c806961379d71008150f763f69d03 *R/heatindex.R
+76161b65639451c966be75488458b3c3 *build/partial.rdb
+b33eb7ff728717ca465be64e60941aec *man/heatindex.Rd
+83bdf6d57d28eeaa8824831202615b89 *src/Makevars
+7ceba10e3354eaf6e4bfccf89b3afc82 *src/RcppExports.cpp
+9545e8a9216901e0e7542ce298a1bfa9 *src/heatindex.cpp
+83cdd0c6828dd0cddee011f21440a4f7 *src/heatindex.h
+c1919d7ac0c02d5e22f84b27982d4943 *src/output.h
+a99f4aae3e38bf63556a833489ac4cc4 *src/r_binding.cpp
