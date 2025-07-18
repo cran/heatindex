@@ -4,15 +4,15 @@
 \alias{heatindex}
 \title{Heat index}
 \usage{
-heatindex(tabs, rh)
+heatindex(T, rh)
 }
 \arguments{
-\item{tabs}{The absolute air temperature in Kelvin. This can be a single number, a vector, a matrix, or an array, but its dimensions must match those of \code{rh}.}
+\item{T}{The absolute air temperature in Kelvin. This can be a single number, a vector, a matrix, or an array, but its dimensions must match those of \code{rh}.}
 
-\item{rh}{The relative humidity of the air, with values in the range of 0 to 1, with respect to saturation over liquid water for air temperatures over 273.16 K and with respect to saturation over ice for air temperatures lower than 273.16 K. This can be a single number, a vector, a matrix, or an array, but its dimensions must match those of \code{tabs}.}
+\item{rh}{The relative humidity of the air, with values in the range of 0 to 1, with respect to saturation over liquid water for air temperatures over 273.16 K and with respect to saturation over ice for air temperatures lower than 273.16 K. This can be a single number, a vector, a matrix, or an array, but its dimensions must match those of \code{T}.}
 }
 \value{
-The values of the heat index, in Kelvin, in the same shape as \code{tabs} and \code{rh}.
+The values of the heat index, in Kelvin, in the same shape as \code{T} and \code{rh}.
 }
 \description{
 \code{heatindex} is a simpler and faster version of the heat index that was originally defined in 1979, used by the U.S. National Weather Service, extended to all combinations of temperature and humidity in 2022, and then made simpler and faster in 2025. This simpler and faster version uses a simpler set of physiological equations and a faster computational algorithm without altering the values of the heat index above 300 K (27 C, 80 F) and with only minor changes in the heat index at lower temperatures.

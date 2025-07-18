@@ -11,20 +11,167 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // heatindex_vec
-Rcpp::NumericVector heatindex_vec(Rcpp::NumericVector Ta, Rcpp::NumericVector RH);
-RcppExport SEXP _heatindex_heatindex_vec(SEXP TaSEXP, SEXP RHSEXP) {
+Rcpp::NumericVector heatindex_vec(Rcpp::NumericVector T, Rcpp::NumericVector rh);
+RcppExport SEXP _heatindex_heatindex_vec(SEXP TSEXP, SEXP rhSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type Ta(TaSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type RH(RHSEXP);
-    rcpp_result_gen = Rcpp::wrap(heatindex_vec(Ta, RH));
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type T(TSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type rh(rhSEXP);
+    rcpp_result_gen = Rcpp::wrap(heatindex_vec(T, rh));
+    return rcpp_result_gen;
+END_RCPP
+}
+// wetbulb_vec
+Rcpp::NumericVector wetbulb_vec(Rcpp::NumericVector p, Rcpp::NumericVector T, Rcpp::NumericVector rh, Rcpp::LogicalVector psychrometric, Rcpp::LogicalVector icebulb, Rcpp::LogicalVector verbose, Rcpp::NumericVector Lewis);
+RcppExport SEXP _heatindex_wetbulb_vec(SEXP pSEXP, SEXP TSEXP, SEXP rhSEXP, SEXP psychrometricSEXP, SEXP icebulbSEXP, SEXP verboseSEXP, SEXP LewisSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type p(pSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type T(TSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type rh(rhSEXP);
+    Rcpp::traits::input_parameter< Rcpp::LogicalVector >::type psychrometric(psychrometricSEXP);
+    Rcpp::traits::input_parameter< Rcpp::LogicalVector >::type icebulb(icebulbSEXP);
+    Rcpp::traits::input_parameter< Rcpp::LogicalVector >::type verbose(verboseSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type Lewis(LewisSEXP);
+    rcpp_result_gen = Rcpp::wrap(wetbulb_vec(p, T, rh, psychrometric, icebulb, verbose, Lewis));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rh_from_wetbulb_vec
+Rcpp::NumericVector rh_from_wetbulb_vec(Rcpp::NumericVector p, Rcpp::NumericVector T, Rcpp::NumericVector Tw, Rcpp::LogicalVector psychrometric, Rcpp::LogicalVector icebulb, Rcpp::LogicalVector verbose, Rcpp::NumericVector Lewis);
+RcppExport SEXP _heatindex_rh_from_wetbulb_vec(SEXP pSEXP, SEXP TSEXP, SEXP TwSEXP, SEXP psychrometricSEXP, SEXP icebulbSEXP, SEXP verboseSEXP, SEXP LewisSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type p(pSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type T(TSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type Tw(TwSEXP);
+    Rcpp::traits::input_parameter< Rcpp::LogicalVector >::type psychrometric(psychrometricSEXP);
+    Rcpp::traits::input_parameter< Rcpp::LogicalVector >::type icebulb(icebulbSEXP);
+    Rcpp::traits::input_parameter< Rcpp::LogicalVector >::type verbose(verboseSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type Lewis(LewisSEXP);
+    rcpp_result_gen = Rcpp::wrap(rh_from_wetbulb_vec(p, T, Tw, psychrometric, icebulb, verbose, Lewis));
+    return rcpp_result_gen;
+END_RCPP
+}
+// pvstarl
+double pvstarl(double T);
+RcppExport SEXP _heatindex_pvstarl(SEXP TSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(pvstarl(T));
+    return rcpp_result_gen;
+END_RCPP
+}
+// pvstars
+double pvstars(double T);
+RcppExport SEXP _heatindex_pvstars(SEXP TSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(pvstars(T));
+    return rcpp_result_gen;
+END_RCPP
+}
+// pvstar
+double pvstar(double T);
+RcppExport SEXP _heatindex_pvstar(SEXP TSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(pvstar(T));
+    return rcpp_result_gen;
+END_RCPP
+}
+// qvstarl
+double qvstarl(double p, double T);
+RcppExport SEXP _heatindex_qvstarl(SEXP pSEXP, SEXP TSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type p(pSEXP);
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(qvstarl(p, T));
+    return rcpp_result_gen;
+END_RCPP
+}
+// qvstars
+double qvstars(double p, double T);
+RcppExport SEXP _heatindex_qvstars(SEXP pSEXP, SEXP TSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type p(pSEXP);
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(qvstars(p, T));
+    return rcpp_result_gen;
+END_RCPP
+}
+// qvstar
+double qvstar(double p, double T);
+RcppExport SEXP _heatindex_qvstar(SEXP pSEXP, SEXP TSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type p(pSEXP);
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(qvstar(p, T));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Tstarl
+double Tstarl(double pv);
+RcppExport SEXP _heatindex_Tstarl(SEXP pvSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type pv(pvSEXP);
+    rcpp_result_gen = Rcpp::wrap(Tstarl(pv));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Tstars
+double Tstars(double pv);
+RcppExport SEXP _heatindex_Tstars(SEXP pvSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type pv(pvSEXP);
+    rcpp_result_gen = Rcpp::wrap(Tstars(pv));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Tstar
+double Tstar(double pv);
+RcppExport SEXP _heatindex_Tstar(SEXP pvSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type pv(pvSEXP);
+    rcpp_result_gen = Rcpp::wrap(Tstar(pv));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_heatindex_heatindex_vec", (DL_FUNC) &_heatindex_heatindex_vec, 2},
+    {"_heatindex_wetbulb_vec", (DL_FUNC) &_heatindex_wetbulb_vec, 7},
+    {"_heatindex_rh_from_wetbulb_vec", (DL_FUNC) &_heatindex_rh_from_wetbulb_vec, 7},
+    {"_heatindex_pvstarl", (DL_FUNC) &_heatindex_pvstarl, 1},
+    {"_heatindex_pvstars", (DL_FUNC) &_heatindex_pvstars, 1},
+    {"_heatindex_pvstar", (DL_FUNC) &_heatindex_pvstar, 1},
+    {"_heatindex_qvstarl", (DL_FUNC) &_heatindex_qvstarl, 2},
+    {"_heatindex_qvstars", (DL_FUNC) &_heatindex_qvstars, 2},
+    {"_heatindex_qvstar", (DL_FUNC) &_heatindex_qvstar, 2},
+    {"_heatindex_Tstarl", (DL_FUNC) &_heatindex_Tstarl, 1},
+    {"_heatindex_Tstars", (DL_FUNC) &_heatindex_Tstars, 1},
+    {"_heatindex_Tstar", (DL_FUNC) &_heatindex_Tstar, 1},
     {NULL, NULL, 0}
 };
 
